@@ -1,0 +1,106 @@
+version: "3.0"
+
+intents:
+  - greet:
+      use_entities: []
+  - move_forward:
+      use_entities: []
+  - move_backward:
+      use_entities: []
+  - move_right:
+      use_entities: []
+  - move_left:
+      use_entities: []
+  - goodbye:
+      use_entities: []
+  - mood_great:
+      use_entities: []
+  - intro:
+      use_entities: []
+  - about_stargent:
+      use_entities: []
+  - about_jecrc:
+      use_entities: []
+  - funny:
+      use_entities: []
+  - how_are_you:
+      use_entities: []
+  - dance:
+      use_entities: []
+  - recognize_me:
+      use_entities: []
+  - song:
+      use_entities:
+        - song
+  - weather:
+      use_entities:
+        - city
+
+entities:
+  - city
+  - song
+
+slots:
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+  song:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: song
+
+responses:
+  utter_greet:
+  - text: "hi"
+
+  utter_intro:
+  - text: "i"
+
+  utter_how_are_you:
+  - text : "hru"
+
+  utter_about_jecrc:
+  - text: "jecrc"
+
+  utter_about_stargent:
+  - text: "strgnt"
+
+  utter_joke:
+  - text: "jok"
+
+  utter_happy:
+  - text: "hp"
+
+  utter_goodbye:
+  - text: "by"
+
+  utter_weather:
+  - text: "wthr {city}"
+
+  utter_song: 
+  - text: "s {song}"
+
+  utter_forward: 
+  - text: "mf"
+
+  utter_backward: 
+  - text: "mb"
+
+  utter_right: 
+  - text: "mr"
+
+  utter_left: 
+  - text: "ml"
+
+  utter_dance:
+  - text: "d"
+
+  utter_recognize_me:
+  - text: "rm"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
